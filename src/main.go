@@ -7,6 +7,13 @@ import (
 	"os"
 )
 
+var (
+	MAKEFILENOTFOUND  string = "The Makefile not is found in this repository"
+	CONFIGURENOTFOUND string = "The ./configure not is found in this repository"
+	MAKEFILEexists    bool   = false
+	CONFIGUREexists   bool   = false
+)
+
 // ----------------------------------------------- Util functions -------------------------------------------
 
 func createRepoList() {
