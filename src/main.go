@@ -1,14 +1,35 @@
 package main
 
 import (
+	"errors"
 	"flag"
 	"fmt"
+	"os"
 )
+
+// ----------------------------------------------- Util functions -------------------------------------------
+
+func createRepoList() {
+	os.Create("repolist.txt")
+}
+
+func createTmpDirectory() {
+	os.Mkdir("tmp", 0755)
+}
+
+func removeTmpDirectory() {
+	os.Remove("tmp")
+}
 
 // ----------------------------------------------- List of Function in Fpkg ---------------------------------
 
 func addRepo(RepoName string) {
-	fmt.Printf("adding a repo %s\n", RepoName)
+	if _, err := os.Stat("./repoList.txt"); errors.Is(err, os.ErrNotExist) {
+		createRepoList()
+		fmt.Printf("adding a repo %s\n", RepoName)
+	} else {
+		fmt.Printf("adding a repo %s\n", RepoName)
+	}
 }
 
 func delRepo(RepoName string) {
@@ -16,7 +37,9 @@ func delRepo(RepoName string) {
 }
 
 func installPackage(PackageName string) {
+	createTmpDirectory()
 	fmt.Printf("Installing a %s\n", PackageName)
+	//defer removeTmpDirectory()
 }
 
 func uninstallPackage(PackageName string) {
