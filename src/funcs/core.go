@@ -3,13 +3,15 @@
 package funcs
 
 import (
+	"errors"
 	"fmt"
 	"os"
-	"errors"
 )
 
+var repoLocale string = "./repoList.txt"
+
 func AddRepo(RepoName string) {
-	if _, err := os.Stat("./repoList.txt"); errors.Is(err, os.ErrNotExist) {
+	if _, err := os.Stat(repoLocale); errors.Is(err, os.ErrNotExist) {
 		CreateRepoList()
 		fmt.Printf("adding the repo %s\n", RepoName)
 	} else {
@@ -30,4 +32,3 @@ func InstallPackage(PackageName string) {
 func UninstallPackage(PackageName string) {
 	fmt.Printf("Removing %s\n", PackageName)
 }
-
