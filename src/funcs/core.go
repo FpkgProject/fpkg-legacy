@@ -9,6 +9,7 @@ import (
 )
 
 var repoLocale string = "./repoList.txt"
+var tempDirectory string = "tmp"
 
 func AddRepo(RepoName string) {
 	if _, err := os.Stat(repoLocale); errors.Is(err, os.ErrNotExist) {
