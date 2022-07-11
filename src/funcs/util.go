@@ -3,15 +3,13 @@ package funcs
 import "os"
 
 func CreateRepoList() {
-	os.Create("repolist.txt")
+	os.Create(*&repoLocale)
 }
 
 func CreateTmpDirectory() {
-	os.Mkdir("tmp", 0755)
+	os.Mkdir(*&tempDirectory, 0755)
 }
 
 func RemoveTmpDirectory() {
-	os.Remove("tmp")
+	os.Remove(*&tempDirectory)
 }
-
-
