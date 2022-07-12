@@ -1,11 +1,35 @@
 # Fpkg
-A package manager for unix-like system built with golang.
+A package manager for Unix-like Operating systems, written in Golang.
 
-The Purpose of fpkg is to create a universal package manager for unix-like system.
+The Purpose of fpkg is to create a universal package manager for Unix-like operating systems.
 
 ## How it works
-Fpkg uses `make` to build and install packages. It works like ports (FreeBSD), Portage (Gentoo) and AUR(Arch Linux).
+fpkg is source-code based, it checks if a repository with the specified name exists and provides a list for you to choose from. It then runs `./configure` to... Yes, configure the program, then runs `make` to compile the software and `make install` to install.
 
-1. In search you lock a package url, if exists in repoList.
+The main idea is to act similarly to ArchLinux AUR, Gentoo Portage/Emerge and BSD Ports, but universally.
 
-2. In install it clones a repo in a temporary directory and run "**./configure**", "**make**" and "**makefile**" case exists to generate a native binary, before this he install in machine and remove the temporary directory. 
+## Contributing
+ - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) - We are trying to do organized commits, so if you have the intention of contributing, would be cool if you use Conventional Commits.
+ 
+ - Branches
+ 
+ We use two principal branches, `master` and `dev`. ALL new features are first made in the **dev** branch, and after a few testing, merged to the master.
+ To doing a Pull Request, you need to:
+ 1. [Fork](https://github.com/FpkgProject/Fpkg/fork) the repository
+ 2. Create a new branch from the dev branch:
+ ```
+ git checkout -b my-new-feature dev
+ ```
+ 3. Add your files, commit and push:
+```
+git add .
+git commit -m "feat: A awesome feature"
+git push
+```
+5. After these steps, open a [Pull Request](https://github.com/FpkgProject/Fpkg/pulls) to merge your branch with our dev branch.
+
+## License
+BSD-3-Clause license
+
+---
+❤ `Keep it simple, stupid!`
