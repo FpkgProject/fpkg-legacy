@@ -11,7 +11,7 @@ var tempDirectory string = "tmp"
 func InstallPackage(PackageName string) {
 	CreateTmpDirectory()
 	fmt.Printf("Installing %s\n", PackageName)
-	//defer removeTmpDirectory()
+	//defer RemoveTmpDirectory()
 }
 
 func UninstallPackage(PackageName string) {
