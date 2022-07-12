@@ -6,7 +6,6 @@ import (
 	"fmt"
 )
 
-var repoLocale string = "./repoList.txt"
 var tempDirectory string = "tmp"
 
 func InstallPackage(PackageName string) {
