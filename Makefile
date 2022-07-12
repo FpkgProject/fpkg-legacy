@@ -7,5 +7,3 @@ all:
 		mv main "build/$(PROJ_NAME)"
 clear:
 		rm -rf build
-		rm -rf tmp
-		rm -rf repoList.txt
