@@ -17,13 +17,14 @@ func main(){
   if len(repos.Repositories) == 0 {
     log.Fatal("Package not found.")
   }
+
   if len(repos.Repositories) < SizeOfList {
     SizeOfList = len(repos.Repositories)
   }
 
 
   for i := 0; i < SizeOfList;i++ {
-    fmt.Printf("\n\n[%d] -> %s",
+    fmt.Printf("\n[%d] -> %s",
       i, repos.Repositories[i].GetFullName())
 
     fmt.Printf("\n\t%s",
