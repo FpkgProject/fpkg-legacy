@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"fpkg/funcs"
 	"log"
@@ -38,4 +39,16 @@ func searchPackage(RepositorySearch string) {
 	}
 }
 
-func main() {}
+func main() {
+	installFlag := flag.String("install", "", "Install a new package")
+	uninstallFlag := flag.String("uninstall", "", "Remove a package from the system")
+	flag.Parse()
+
+	if *installFlag != "" {
+		searchPackage(*installFlag)
+		fmt.Println()
+	}
+	if *uninstallFlag != "" {
+		funcs.UninstallPackage(*uninstallFlag)
+	}
+}
