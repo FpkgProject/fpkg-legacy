@@ -2,18 +2,19 @@ package main
 
 import (
 	"flag"
-	"fpkg/funcs"
 )
 
 func init() {
 	installFlag := flag.String("install", "", "Install a new package")
-	uninstallFlag := flag.String("uninstall", "", "Remove a package from the system")
+	//UninstallFlag := flag.String("uninstall", "", "Remove a package from the system")
 	flag.Parse()
 
-	if *installFlag != "" {
-		funcs.InstallPackage(*installFlag)
+  /*
+	if *InstallFlag != "" {
+		funcs.InstallPackage(*InstallFlag)
 	}
-	if *uninstallFlag != "" {
-		funcs.UninstallPackage(*uninstallFlag)
+	if *UninstallFlag != "" {
+		funcs.UninstallPackage(*UninstallFlag)
 	}
+  */
 }
