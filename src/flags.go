@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"fpkg/funcs"
 )
 
@@ -12,6 +13,7 @@ func init() {
 
 	if *installFlag != "" {
 		searchPackage(*installFlag)
+		fmt.Println()
 	}
 	if *uninstallFlag != "" {
 		funcs.UninstallPackage(*uninstallFlag)
