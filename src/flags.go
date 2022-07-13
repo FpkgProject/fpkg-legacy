@@ -11,7 +11,7 @@ func init() {
 	flag.Parse()
 
 	if *installFlag != "" {
-		funcs.InstallPackage(*installFlag)
+		searchPackage(*installFlag)
 	}
 	if *uninstallFlag != "" {
 		funcs.UninstallPackage(*uninstallFlag)
