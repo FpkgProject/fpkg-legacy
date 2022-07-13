@@ -12,6 +12,7 @@ import (
 var(
   cfgPath    string = "./config.ini"
   SizeOfList int
+  ColorBool bool
 )
 
 func newCfg() error {
@@ -22,6 +23,9 @@ func newCfg() error {
     return err
   } /* If we get a error, return to the main function to handle
     * Because the next line will overwrite it.              */
+  newObj, err = gonfigure.WriteParameterToSection(newObj, "options", "colors", "true")
+  if err != nil { return err }
+
   err = gonfigure.WriteINIFile(newObj, cfgPath)
   return err
 }
@@ -50,5 +54,7 @@ func init(){
       SizeOfList = 5
     }
   }
-}
 
+  cfgcolors, _ := gonfigure.GetParameterValue(cfgfile, "options", "colors")
+  ColorBool, _ = strconv.ParseBool(cfgcolors)
+}
