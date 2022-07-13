@@ -1,19 +1,13 @@
-// Core functions / fpkg functions.
-
 package funcs
 
 import (
 	"fmt"
 )
 
-var tempDirectory string = "tmp"
-
-func InstallPackage(PackageName string) {
-	//CreateTmpDirectory()
-	fmt.Printf("Installing %s\n", PackageName)
-	//defer RemoveTmpDirectory()
-}
+var (
+	tempDirectory string = "tmp"
+)
 
 func UninstallPackage(PackageName string) {
-	fmt.Printf("Removing %s\n", PackageName)
+	fmt.Printf("Removing %s package from you system", PackageName)
 }
