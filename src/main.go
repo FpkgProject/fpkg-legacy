@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"fpkg/funcs"
-	"log"
-	"os"
-	"text/tabwriter"
+  "fmt"
+  "fpkg/funcs"
+  "log"
 )
 
 
@@ -22,14 +20,6 @@ func main(){
     log.Fatal("Cannot get the repositories list, please check network connection.")
   }
 
-  w := new(tabwriter.Writer)
-  w.Init(os.Stdout, 8, 8, 0, '\t', 0)
-
-  defer w.Flush()
-
-  fmt.Fprintf(w, "\n %s\t%s\t%s\t", "Repository", "Stars", "IsFork")
-  fmt.Fprintf(w, "\n %s\t%s\t%s\t", "----------", "-----", "------")
-  
   if len(repos.Repositories) == 0 {
     log.Fatal("Package not found.")
   }
