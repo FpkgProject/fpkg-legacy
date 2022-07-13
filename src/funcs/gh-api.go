@@ -13,3 +13,12 @@ func SearchRepos(reposearch string) (*github.RepositoriesSearchResult, error) {
   return repos, err
 }
 
+
+func IsFork(fork bool) string {
+  if fork == true {
+    return "yes"
+  } else {
+    return "no"
+  }
+}
+
