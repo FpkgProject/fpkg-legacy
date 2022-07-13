@@ -27,11 +27,17 @@ func main(){
     SizeOfList = len(repos.Repositories)
   }
 
+
   for i := 0; i < SizeOfList;i++ {
-    fmt.Fprintf(w, "\n [%d] %s\t%d\t%s\t", i,
-    repos.Repositories[i].GetFullName(),
-    repos.Repositories[i].GetStargazersCount(),
-    funcs.IsFork(repos.Repositories[i].GetFork()))
+    fmt.Printf("\n\n[%d] -> %s",
+      i, repos.Repositories[i].GetFullName())
+
+    fmt.Printf("\n\t%s",
+      funcs.GetDescriptionText(repos.Repositories[i].GetDescription()))
+
+    fmt.Printf("\n\tStars: %d %s",
+      repos.Repositories[i].GetStargazersCount(),
+      funcs.GetForkText(repos.Repositories[i].GetFork()))
   }
 
   Cli()
