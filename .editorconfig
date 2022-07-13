@@ -1,0 +1,14 @@
+# editorconfig.org
+root = true
+
+[*]
+end_of_line = lf
+insert_final_line = true
+
+[*.go]
+indent_style = tab
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
