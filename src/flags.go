@@ -5,7 +5,7 @@ import (
 	"fpkg/funcs"
 )
 
-func Cli() {
+func init() {
 	installFlag := flag.String("install", "", "Install a new package")
 	uninstallFlag := flag.String("uninstall", "", "Remove a package from the system")
 	flag.Parse()

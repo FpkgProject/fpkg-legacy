@@ -43,6 +43,4 @@ func main(){
     repos.Repositories[i].GetStargazersCount(),
     funcs.IsFork(repos.Repositories[i].GetFork()))
   }
-
-  Cli()
 }
