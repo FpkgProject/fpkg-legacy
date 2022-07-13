@@ -23,15 +23,32 @@ func main(){
   }
 
 
-  for i := 0; i < SizeOfList;i++ {
-    fmt.Printf("\n[%d] -> %s",
-      i, repos.Repositories[i].GetFullName())
+  if true {
+    for i := 0; i < SizeOfList;i++ {
+      fmt.Printf("\n\n%s[%d]\033[m %s->\033[m %s%s\033[m",
+        funcs.Color.Blue, i, funcs.Color.Green,
+        funcs.Color.Cyan, repos.Repositories[i].GetFullName())
 
-    fmt.Printf("\n\t%s",
-      funcs.GetDescriptionText(repos.Repositories[i].GetDescription()))
+      fmt.Printf("\n\t%s",
+        funcs.GetDescriptionText(repos.Repositories[i].GetDescription()))
 
-    fmt.Printf("\n\tStars: %d %s",
-      repos.Repositories[i].GetStargazersCount(),
-      funcs.GetForkText(repos.Repositories[i].GetFork()))
+      fmt.Printf("\n\t%sStars: %d %s\033[m",
+        funcs.Color.Yellow,
+        repos.Repositories[i].GetStargazersCount(),
+        funcs.GetForkText(repos.Repositories[i].GetFork()))
+    }
+
+  } else {
+    for i := 0; i < SizeOfList;i++ {
+      fmt.Printf("\n\n[%d] -> %s",
+        i, repos.Repositories[i].GetFullName())
+
+      fmt.Printf("\n\t%s",
+        funcs.GetDescriptionText(repos.Repositories[i].GetDescription()))
+
+      fmt.Printf("\n\tStars: %d %s",
+        repos.Repositories[i].GetStargazersCount(),
+        funcs.GetForkText(repos.Repositories[i].GetFork()))
+    }
   }
 }
