@@ -26,19 +26,20 @@ func main(){
   if true {
     for i := 0; i < SizeOfList;i++ {
       fmt.Printf("\n\n%s[%d]\033[m %s->\033[m %s%s\033[m",
-        funcs.Color.Blue, i, funcs.Color.Green,
-        funcs.Color.Cyan, repos.Repositories[i].GetFullName())
+      funcs.Color.Blue, i, funcs.Color.Green,
+      funcs.Color.Cyan, repos.Repositories[i].GetFullName())
 
       fmt.Printf("\n\t%s",
-        funcs.GetDescriptionText(repos.Repositories[i].GetDescription()))
+      funcs.GetDescriptionText(repos.Repositories[i].GetDescription()))
 
       fmt.Printf("\n\t%sStars: %d %s\033[m",
-        funcs.Color.Yellow,
-        repos.Repositories[i].GetStargazersCount(),
-        funcs.GetForkText(repos.Repositories[i].GetFork()))
+      funcs.Color.Yellow,
+      repos.Repositories[i].GetStargazersCount(),
+      funcs.GetForkText(repos.Repositories[i].GetFork()))
     }
 
-  } else {
+  }
+/*
     for i := 0; i < SizeOfList;i++ {
       fmt.Printf("\n\n[%d] -> %s",
         i, repos.Repositories[i].GetFullName())
@@ -51,4 +52,5 @@ func main(){
         funcs.GetForkText(repos.Repositories[i].GetFork()))
     }
   }
+  */
 }

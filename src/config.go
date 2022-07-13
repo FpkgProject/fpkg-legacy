@@ -1,13 +1,12 @@
 package main
 
 import (
-	"errors"
-	"fmt"
-	"log"
-	"os"
-	"strconv"
-
-	"github.com/IbrahimShahzad/gonfigure"
+  "github.com/IbrahimShahzad/gonfigure"
+  "errors"
+  "fmt"
+  "log"
+  "os"
+  "strconv"
 )
 
 var(
@@ -22,13 +21,13 @@ func newCfg() error {
   if err != nil{
     return err
   } /* If we get a error, return to the main function to handle
-     * Because the next line will overwrite it.              */
+    * Because the next line will overwrite it.              */
   err = gonfigure.WriteINIFile(newObj, cfgPath)
   return err
 }
 
 func init(){
-    if _, err := os.Stat(cfgPath); errors.Is(err, os.ErrNotExist){
+  if _, err := os.Stat(cfgPath); errors.Is(err, os.ErrNotExist){
     fmt.Println("Config file not found, creating one.")
     err := newCfg()
     if err != nil {
@@ -41,7 +40,6 @@ func init(){
   }
 
   listParam, err := gonfigure.GetParameterValue(cfgfile, "options", "sizeoflist")
-
   if err != nil {
     fmt.Println("Failed to get SizeOfList value. Using default 5")
     SizeOfList = 5

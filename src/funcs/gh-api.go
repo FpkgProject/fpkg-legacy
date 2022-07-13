@@ -17,7 +17,6 @@ func SearchRepos(reposearch string) (*github.RepositoriesSearchResult, error) {
 func GetForkText(fork bool) string {
   if fork {
     return "[Forked]"
-
   } else {
     return ""
   }
@@ -27,10 +26,8 @@ func GetForkText(fork bool) string {
 func GetDescriptionText(desc string) string {
   if desc == "" {
     return "...No description..."
-
   } else {
     return desc
   }
 }
-
 

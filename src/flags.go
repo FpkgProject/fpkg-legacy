@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/spf13/pflag"
+  "github.com/spf13/pflag"
 )
 
 var InstallFlag string
@@ -14,11 +14,10 @@ func init() {
   //UninstallFlag := flag.String("uninstall", "", "Remove a package from the system")
 
   /*
-	if *InstallFlag != "" {
-		funcs.InstallPackage(*InstallFlag)
-	}
-	if *UninstallFlag != "" {
-		funcs.UninstallPackage(*UninstallFlag)
-	}
-  */
+  if *InstallFlag != "" {
+    funcs.InstallPackage(*InstallFlag)
+  }
+  if *UninstallFlag != "" {
+    funcs.UninstallPackage(*UninstallFlag)
+  }*/
 }
