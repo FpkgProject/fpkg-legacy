@@ -11,9 +11,7 @@ import (
 
 func main(){
   var (
-    showlist int = 5
     reposcan string
-    
   )
 
   fmt.Printf(":: Search for a package: ")
@@ -35,11 +33,11 @@ func main(){
   if len(repos.Repositories) == 0 {
     log.Fatal("Package not found.")
   }
-  if len(repos.Repositories) < showlist {
-    showlist = len(repos.Repositories)
+  if len(repos.Repositories) < SizeOfList {
+    SizeOfList = len(repos.Repositories)
   }
 
-  for i := 0; i < showlist;i++ {
+  for i := 0; i < SizeOfList;i++ {
     fmt.Fprintf(w, "\n [%d] %s\t%d\t%s\t", i,
     repos.Repositories[i].GetFullName(),
     repos.Repositories[i].GetStargazersCount(),
