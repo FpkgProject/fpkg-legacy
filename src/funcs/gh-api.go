@@ -14,11 +14,23 @@ func SearchRepos(reposearch string) (*github.RepositoriesSearchResult, error) {
 }
 
 
-func IsFork(fork bool) string {
-  if fork == true {
-    return "yes"
+func GetForkText(fork bool) string {
+  if fork {
+    return "[Forked]"
+
   } else {
-    return "no"
+    return ""
   }
 }
+
+
+func GetDescriptionText(desc string) string {
+  if desc == "" {
+    return "...No description..."
+
+  } else {
+    return desc
+  }
+}
+
 
