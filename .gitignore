@@ -15,4 +15,4 @@
 # Build directory, Fpkg configs and binaries.
 src/fpkg
 build/
-src/config.ini
+**config.ini
