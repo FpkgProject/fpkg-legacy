@@ -8,14 +8,8 @@ import (
 
 
 func main(){
-  var (
-    reposcan string
-  )
 
-  fmt.Printf(":: Search for a package: ")
-  fmt.Scanln(&reposcan)
-
-  repos, err := funcs.SearchRepos(reposcan)
+  repos, err := funcs.SearchRepos(InstallFlag)
   if err != nil {
     log.Fatal("Cannot get the repositories list, please check network connection.")
   }

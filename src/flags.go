@@ -4,8 +4,11 @@ import (
 	"flag"
 )
 
+var InstallFlag string
+
 func init() {
-	installFlag := flag.String("install", "", "Install a new package")
+
+	flag.StringVar(&InstallFlag, "install", "", "Install a new package")
 	//UninstallFlag := flag.String("uninstall", "", "Remove a package from the system")
 	flag.Parse()
 
