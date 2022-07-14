@@ -4,9 +4,23 @@ import (
   "fmt"
   "fpkg/funcs"
   "log"
+  "os"
+  "github.com/go-git/go-git/v5"
 )
 
-func SearchFlag(){
+func Install(){
+  url, err := funcs.GetRepoURL(InstallFlag[0], InstallFlag[1])
+  if err != nil {
+    fmt.Println(Color.Red + "Error:" + Color.Reset, "package not found.")
+  }
+
+  git.PlainClone("./root/var/cache/" + InstallFlag[0] + "_" + InstallFlag[1], false, &git.CloneOptions{
+    URL:      url,
+    Progress: os.Stdout,
+  })
+}
+
+func SearchFunction(){
 repos, err := funcs.SearchRepos(SearchFlagVar)
   if err != nil {
     log.Fatal("Cannot get the repositories list, please check network connection.")
@@ -36,7 +50,11 @@ repos, err := funcs.SearchRepos(SearchFlagVar)
 }
 
 func main(){
+  if len(os.Args) < 2 {
+    fmt.Println(Color.Bold + Color.Red + "error:" + Color.Reset, "no operation specified. (use -h for help)")
+  }
   if SearchFlagVar != "" {
-    SearchFlag()
+    SearchFunction()
   }
 }
+
