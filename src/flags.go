@@ -6,11 +6,13 @@ import (
   "github.com/spf13/pflag"
 )
 
-var InstallFlag string
+//var InstallFlag string
+var SearchFlagVar string
 
 func init() {
-  pflag.StringVarP(&InstallFlag, "install", "i", "", "Install a new package.")
+  pflag.StringP(/*&InstallFlag,*/ "install", "i", "", "Install a new package.")
   pflag.StringP("remove", "r", "", "Remove a package.")
+  pflag.StringVarP(&SearchFlagVar, "search", "s", "", "search for a package.")
   pflag.Parse()
 
   if len(os.Args) < 2 {

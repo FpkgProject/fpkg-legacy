@@ -6,9 +6,8 @@ import (
   "log"
 )
 
-
-func main(){
-  repos, err := funcs.SearchRepos(InstallFlag)
+func SearchFlag(){
+repos, err := funcs.SearchRepos(SearchFlagVar)
   if err != nil {
     log.Fatal("Cannot get the repositories list, please check network connection.")
   }
@@ -21,10 +20,8 @@ func main(){
     SizeOfList = len(repos.Repositories)
   }
 
-
   for i := 0; i < SizeOfList;i++ {
-    fmt.Printf("\n%s[%d]\033[m %s->\033[m %s%s\033[m",
-    Color.Blue, i, Color.Green,
+    fmt.Printf("\n%s%s\033[m",
     Color.Cyan, repos.Repositories[i].GetFullName())
 
     fmt.Printf("\n\t%s",
@@ -34,5 +31,12 @@ func main(){
     Color.Yellow,
     repos.Repositories[i].GetStargazersCount(),
     funcs.GetForkText(repos.Repositories[i].GetFork()))
+  }
+  fmt.Println("\n :: Found", repos.GetTotal(), "correspondent packages.")
+}
+
+func main(){
+  if SearchFlagVar != "" {
+    SearchFlag()
   }
 }
