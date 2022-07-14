@@ -2,6 +2,7 @@ package main
 
 type colors struct {
   Reset string
+  Bold string
   //Black string
   Red string
   Green string
@@ -15,6 +16,7 @@ type colors struct {
 var colorArray = []colors {
   {
   Reset:    "\033[m",
+  Bold:     "\033[1m",
   //Black:  "\033[30m",
   Red:    "\033[31m",
   Green:  "\033[32m",
@@ -24,7 +26,7 @@ var colorArray = []colors {
   Cyan:   "\033[36m",
   White:  "\033[37m",
   },
-  { "", "", "", "", "", "", "" },
+  { "", "", "", "", "", "", "", "" },
 }
 
 var Color = colorArray[1]
