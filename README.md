@@ -1,3 +1,6 @@
+## :warning: No longer maintained :warning:
+This is no longer maintained, please consider using [RedsonBr140/gpkg](https://github.com/RedsonBr140/gpkg)
+
 # Fpkg
 A package manager for Unix-like Operating systems, written in Golang.
 
